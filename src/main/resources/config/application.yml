@@ -1,0 +1,25 @@
+###
+# The Base Application Configuration File
+###
+spring:
+    # Profile Configuration
+    # available optional profiles: dev or production.
+    # non-optional (reuqired profiles): jwt, api-mappings
+    profiles:
+        active: dev
+        include: game,jwt,api-mappings
+#Actuator configuration
+management:
+    endpoint:
+        shutdown:
+            enabled: false
+    endpoints:
+        web:
+            base-path: /diagnostics/actuator
+#Logging configuration
+logging:
+    file: tic_tac_toe.log
+    level:
+        web: trace
+    pattern:
+        file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

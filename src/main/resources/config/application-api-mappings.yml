@@ -1,0 +1,18 @@
+###
+#API configuration - endpoints
+#NB: Non-optional configuration - defines the endpoints and it is required for every profile!
+###
+api:
+    base-url: localhost
+    protocol: http
+    paths:
+        # Path for creating new game.
+        game-path: /game
+        # Path for joining existing game.
+        game-join-path: /game/{id}/join
+        # Path for playing game.
+        game-play-path: /game/{id}
+        # Actuator health path.
+        actuator-health-path: /diagnostics/actuator/health
+        # Path for getting swagger UI.
+        swaggerUi-path: /swagger-ui.html

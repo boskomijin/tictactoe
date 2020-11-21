@@ -1,0 +1,19 @@
+apply plugin: 'jacoco'
+
+//Defining the jacoco tool options.
+jacoco {
+    toolVersion = libVersions.codeQuality.jacoco
+}
+//Defining the jacoco reports which will be generated and classes which will be excluded from report.
+jacocoTestReport {
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        csv.enabled = false
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: 'com/swarcs/finance/core/service/implementation/DefaultEmailService*')
+        }))
+    }
+}

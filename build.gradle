@@ -1,0 +1,36 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+    // Apply the spring boot plugin to add support for spring boot.
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    // Apply the dependency management plugin for direct and transitive dependencies.
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    // Apply the eclipse plugin for eclipse IDE usage.
+    id 'eclipse'
+    // Apply the spotbugs for bug analysis.
+    id 'com.github.spotbugs' version '4.5.0'
+    // Apply the project report plugin for automatic report creating.
+    id 'project-report'
+    // Apply the build-dashboard plugin for static analysis dashboard creation.
+    id 'build-dashboard'
+}
+
+// Adding group.
+group = 'com.tictactoe.game'
+version = '0.0.1-SNAPSHOT'
+
+// Code compatibility
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+// Apply the repositories.
+apply from: "$projectDir/gradle/dependencies/repositories.gradle"
+
+// Apply the dependencies.
+apply from: "$projectDir/gradle/dependencies/dependencies.gradle"
+
+// Apply the defaults.
+apply from: "$projectDir/gradle/project/defaults.gradle"
+
+// Apply the reports.
+apply from: "$projectDir/gradle/reporting/reports.gradle"

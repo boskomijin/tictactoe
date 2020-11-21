@@ -1,0 +1,27 @@
+apply from: "$projectDir/gradle/dependencies/libVersions.gradle"
+dependencies {
+    // Spring and srping boot dependencies (use the same version as plugin).
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework:spring-context-support'
+    // Bytecode manipulation dependencies.
+    implementation "org.javassist:javassist:$libVersions.byteCodeManipulation.javaAssist"
+    // Code generation dependencies.
+    compileOnly "org.projectlombok:lombok:$libVersions.codeGeneration.lombok"
+    annotationProcessor "org.projectlombok:lombok:$libVersions.codeGeneration.lombok"
+    // Mapping dependencies.
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$libVersions.apache.jacksonDatatypeJsr310"
+    // Code quality dependencies.
+    compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
+    // Documentation dependencies.
+    implementation "org.springdoc:springdoc-openapi-ui:$libVersions.documentation.openApi"
+    // Security dependencies.
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: jjwtVersion
+    // Logging dependencies.
+    implementation "ch.qos.logback:logback-classic:$libVersions.logging.logbackClasic"
+    // Test dependencies
+    testImplementation "org.javassist:javassist:$libVersions.byteCodeManipulation.javaAssist"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}

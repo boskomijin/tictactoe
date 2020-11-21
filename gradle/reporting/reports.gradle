@@ -1,0 +1,7 @@
+apply from: "$projectDir/gradle/reporting/jacoco.gradle"
+test.finalizedBy jacocoTestReport
+apply from: "$projectDir/gradle/reporting/checkstyle.gradle"
+apply from: "$projectDir/gradle/reporting/pmd.gradle"
+apply from: "$projectDir/gradle/reporting/spotbugs.gradle"
+check.finalizedBy projectReport
+projectReport.finalizedBy buildDashboard

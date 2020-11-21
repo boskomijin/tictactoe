@@ -1,0 +1,15 @@
+// Defining the spotbugs tool options.
+//project.extensions.extraProperties.set('SpotBugsTask', com.github.spotbugs.SpotBugsTask)
+spotbugs {
+    ignoreFailures = true
+    toolVersion = libVersions.codeQuality.spotbug
+    effort = "max"
+    reportLevel = "low"
+}
+// Defining the spotbusgs reports which will be generated.
+tasks.matching {task -> task.name.startsWith('spotbugs')}.forEach {
+    it.reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}

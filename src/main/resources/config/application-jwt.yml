@@ -1,0 +1,7 @@
+###
+#JWT configuration
+###
+jwt:
+    header: Authorization
+    secret: mySecret
+    expiration: 3155695200

@@ -1,0 +1,9 @@
+#Application server port
+server:
+    port: 8081
+# swagger-ui custom path
+springdoc:
+    api-docs:
+        enabled: true
+    swagger-ui:
+        path: /swagger-ui.html

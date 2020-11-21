@@ -1,0 +1,28 @@
+ext {
+    libVersions = [
+        apache : [
+            jacksonDatatypeJsr310 : '2.11.1'
+        ],
+        byteCodeManipulation : [
+            javaAssist : '3.27.0-GA'
+        ],
+        codeGeneration : [
+            lombok : '1.18.12'
+        ],
+        codeQuality : [
+            checkstyle : '8.35',
+            jacoco : '0.8.5',
+            pmd : '6.26.0',
+            spotbug : '4.0.6'
+        ],
+        documentation : [
+            openApi : '1.4.6'
+        ],
+        logging : [
+            logbackClasic : '1.2.3'
+        ],
+        security : [
+            jjwtVersion = '0.9.1'
+        ]
+    ]
+}

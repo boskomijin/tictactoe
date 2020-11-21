@@ -1,0 +1,3 @@
+defaultTasks 'clean', 'build'
+apply from: "$projectDir/gradle/project/test.gradle"
+apply from: "$projectDir/gradle/project/boot.gradle"
